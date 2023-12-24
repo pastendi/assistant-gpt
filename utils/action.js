@@ -86,10 +86,12 @@ export const getAllTours = async (searchTerm) => {
       OR: [
         {
           city: {
-            contains: searchTerm,
+            startsWith: searchTerm,
           },
+        },
+        {
           country: {
-            contains: searchTerm,
+            startsWith: searchTerm,
           },
         },
       ],
