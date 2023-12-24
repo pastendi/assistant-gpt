@@ -7,16 +7,7 @@ import toast from 'react-hot-toast'
 
 const Chat = () => {
   const [text, setText] = useState('')
-  const [messages, setMessages] = useState([
-    {
-      role: 'user',
-      content: 'how are you',
-    },
-    {
-      role: 'system',
-      content: 'I am fine thank you',
-    },
-  ])
+  const [messages, setMessages] = useState([])
 
   const { mutate, isPending } = useMutation({
     mutationFn: (latestQuery) => AIResponse([...messages], latestQuery),
